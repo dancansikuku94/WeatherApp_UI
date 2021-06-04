@@ -8,21 +8,20 @@
         placeholder="Search..."
       />
     </div>
+    </div>
     <!--<div class="flex-center ml-20 h-10 w-48 p-5">
   <img src="./src/assets/map.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
   </div>-->
-    <div class="text-blue pt-20">
-      <h1 class="text-blue-500 pt-2 ml-5">Mulot Police Post</h1>
+  <div class="pt-10">
+<img src="/map.jpg" alt=""/>
+  </div>
+  <div class="bg-white pt-2">
+      <h1 class="text-black text-xl text-bold pt-4 ml-5 font-ubuntu">Mulot Police Post</h1>
+      <h2 class="text-black-500 text-xs ml-5 font-ubuntu">Weather forecast.</h2>
+      <h3 class="text-black-500 text-sm ml-5 font-ubuntu">Today 3rd-June 2021</h3>
     </div>
-    <div class="text-blue">
-      <h2 class="text-blue-500 pt-6 ml-5 p=6">Weather forecast.</h2>
-    </div>
-    <div class="text-blue">
-      <h3 class="text-blue-500 pt-6 ml-5">Today 3rd-JUNE2021</h3>
-    </div>
-    </div>
-    <div class="flex flex-row bg-white">
-      <div class="bg-white pt-10">
+    <div class="flex flex-row bg-white w-10">
+      <div class="bg-white pt-4">
         <h1 class="text-black font-medium justify-items-center ml-10">
           Temperature.
         </h1>
@@ -37,17 +36,17 @@
           </div>
         </div>
       </div>
-      <div class="font-medium ml-20 pt-10">
+      <div class="font-medium ml-10 pt-4">
         <h1 class="text-black font-medium">Additional Parameters</h1> 
         <p class="text-blue font-normal">Wind   24</p>
         <p class="text-blue font-normal">Pressure  45</p>
         <p class="text-blue font-normal">Precipitation 55</p>
         </div>
     </div>
-<div class="flex flex-row bg-gray-50 pt-4">
-  <div class="text-black ml-10">
+<div class="flex flex-row bg-gray-50 pt-4 h-4 w-10">
+  <div class="text-black">
    <p class="text-black font-normal">Tuesday</p>
-  <img src="/sun.png" alt="" class="h=6/12 w=4/12"/>
+  <img src="/sun.png" alt="" class="w=4/12 h=1/60"/>
    <p class="text-black font-light">Sunny Interval.</p>
     </div>
   <div class="text-black ml-10">

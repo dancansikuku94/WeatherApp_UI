@@ -1,5 +1,5 @@
 <template>
-  <div class="w-104 h-220 pt-4">
+  <div class="w-150 h-auto pt-4 bg-gray-200">
     <div
       id="app"
       :class="
@@ -15,8 +15,7 @@
               h-4
               w-9
               text-black
-              font-sans
-              bg-white
+              font-roboto
               justify-items-center
               pt-3
               ml-1
@@ -35,27 +34,27 @@
           <img src="/map.jpg" alt="" />
         </div>
         <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
-          <div class="bg-white pt-2 ml-0">
+          <div class="bg-gray-200 pt-2 ml-0">
             <h1 class="text-black text-xl text-bold pt-4 ml-1 font-ubuntu">
               {{ weather.name }}, {{ weather.sys.country }}
             </h1>
             <h2 class="text-black-500 text-xs ml-1 font-ubuntu">
-              Weather forecast.
+              Weather forecast
             </h2>
             <h3 class="text-black-500 text-sm ml-1 font-ubuntu">
               Today, {{ dateBuilder() }}
             </h3>
           </div>
-          <div class="flex flex-row bg-white w-100">
-            <div class="bg-white pt-4 rounded-md">
-              <h1 class="text-black font-roboto justify-items-center ml-10">
+          <div class="flex flex-row bg-gray-200 p-4">
+            <div class="bg-white pt-4 rounded-md p-6">
+              <h1 class="text-black font-roboto justify-items-center ml-5">
                 Temperature
               </h1>
-              <div class="pt-6 h-5 w-4 flex-auto flex space-x-3">
+              <div class="bg-white pt-6 flex-auto flex space-x-3">
                 <div class="flex-auto flex-items-center">
-                  <h2 class="text-blue-600 font-bold">
+                  <h1 class="text-blue-600 font-bold">
                     {{ Math.round(weather.main.temp_max) }}°c
-                  </h2>
+                  </h1>
                   <p class="text-black font-normal">Maximum</p>
                 </div>
                 <div class="flex-auto flex-items-center">
@@ -66,7 +65,7 @@
                 </div>
               </div>
             </div>
-            <div class="font-medium ml-10 pt-4 rounded-md">
+            <div class="ml-4 pt-4 p-3 rounded-md bg-white">
               <h1 class="text-black font-roboto">Additional Parameters</h1>
               <div class="flex flex-col">
                 <div class="text-blue font-normal">
@@ -76,28 +75,31 @@
                   pressure {{ Math.round(weather.main.pressure) }}Pa
                 </div>
                 <div class="text-blue font-normal">
-                  Precipitation{{ Math.round(weather.main.precipitation) }}
+                  Precipitation {{ Math.round(weather.main.precipitation) }}
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex flex-row bg-gray-50 pt-4 h-4 w-10">
-            <div class="text-black">
-              <p class="text-black font-normal">Tuesday</p>
-              <img src="/sun.png" alt="" class="w=4/12 h=1/60" />
-              <p class="text-black font-light">{{ weather.main.icons }}</p>
-            </div>
-            <div class="text-black ml-10">
-              <p class="text-black font-normal">Wednesday</p>
-              <img src="/cloud.png" alt="" class="w-4/12 h-6/12" />
-              <p class="text-black font-light">Sunny Interval.</p>
-            </div>
-            <div class="text-black ml-10">
-              <p class="text-black font-normal">Thursday</p>
-              <img src="/rain.jpg" alt="" class="w-4/12 h-6/12" />
-              <p class="text-black font-light">Heavy Rain.</p>
+          <div class="bg-gray-200 w-100 pt-2">
+            <div class="flex flex-row bg-white pt-4">
+              <div>
+                <p class="text-black font-normal p-2">Tuesday</p>
+                <img src="/sun.png" alt="" class="h=12" />
+                <p class="text-black font-light text-xs">Sunny Interval</p>
+              </div>
+              <div class="ml-10">
+                <p class="text-black p-2 font-normal">Wednesday</p>
+                <img src="/cloud.png" alt="" class="h-12" />
+                <p class="text-black font-light text-xs">Sunny Interval.</p>
+              </div>
+              <div class="ml-10">
+                <p class="text-black p-2 font-normal">Thursday</p>
+                <img src="/rain.jpg" alt="" class="h-12" />
+                <p class="text-black font-light text-xs">Heavy Rain.</p>
+              </div>
             </div>
           </div>
+          <div class="bg-gray-200"></div>
         </div>
       </main>
     </div>

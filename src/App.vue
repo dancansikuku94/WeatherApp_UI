@@ -1,5 +1,5 @@
 <template>
-  <div class="w-64 h-auto pt-4 bg-gray-200">
+  <div class="w-100 h-auto pt-4 bg-gray-200">
     <div
       id="app"
       :class="
@@ -12,7 +12,7 @@
         <div class="h-4 p-3 w-10 text-black font-sans justify-items-center ml-4 mr-4">
           <input
             type="text"
-            class="h-8 w-96 pl-10 pr-36 rounded-lg focus:shadow focus:outline-none"
+            class="h-8 w-96 pl-6 pr-36 rounded-lg focus:shadow focus:outline-none"
             placeholder="Search..."
             v-model="query"
             @keypress="fetchWeather"
@@ -33,20 +33,20 @@
             <h2 class="text-black-500 text-xs ml-1 font-ubuntu">Weather forecast.</h2>
             <h3 class="text-black-500 text-xs ml-1 font-ubuntu">Today, {{ dateBuilder() }}</h3>
           </div>
-          <div class="text-xs ml-2 justify-around flex pt-4 bg-gray-200">
-            <div class="bg-white pt-2 rounded-md">
+          <div class="text-xs ml-4 mr-4 justify-around flex pt-4 bg-gray-200">
+            <div class="bg-white pt-2 p-2 rounded-md">
               <h1 class="text-black font-roboto ml-4 p-2">Temperature</h1>
               <div class="pt-2 h-4 flex-auto flex">
                 <div class="flex-auto flex-items-center">
                <div class="flex">   <h2
-                    class="text-blue-600 text-4xl p-2 font-bold"
-                  >{{ Math.round(weather.main.temp_max) }}</h2><h class="text-black font-xs flex">°c</h></div>
+                    class="text-blue-600 text-4xl pt-0 p-2 font-400"
+                  >{{ Math.round(weather.main.temp_max) }}</h2><h class="text-black font-xs mr-4 mt-4">°c</h></div>
                   <p class="text-black p-2 font-normal">Maximum</p>
                 </div>
                 <div class="flex-auto flex-items-center">
                   <div class="flex"><h3
-                    class="text-blue-600 text-4xl p-2 font-bold"
-                  >{{ Math.round(weather.main.temp_min) }}</h3><p class="text-black font-xs">°c</p></div>
+                    class="text-blue-600 text-4xl p-2 pt-0 font-400"
+                  >{{ Math.round(weather.main.temp_min) }}</h3><p class="text-black mr-4 mt-4 font-xs">°c</p></div>
                   <p class="text-black p-2 font-normal">Minimum</p>
                 </div>
               </div>
@@ -67,7 +67,7 @@
                 ><p>Precipitation </p><p class="text-blue-300">{{ Math.round(weather.main.precipitation) }}</p></div>
               </div>
             </div>
-          <div class="bg-gray-200 pt-4 w-100">
+          <div class="bg-gray-200 pt-4 w-60 mr-4">
             <div class="flex flex-row ml-4 justify-around rounded-md bg-white">
               <div class="text-black p-2">
                 <p class="text-black text-xs font-Roboto ml-2">Tuesday</p>

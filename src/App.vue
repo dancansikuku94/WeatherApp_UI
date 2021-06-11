@@ -9,21 +9,22 @@
       "
     >
       <main>
-        <div>
-          <div class="h-4 w-6 text-black font-sans justify-items-center ml-4 mr-4">
-           <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
-            <input
-              type="text"
-              class="h-8 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none"
-              placeholder="Search..."
-              v-model="query"
-              @keypress="fetchWeather"
-            />
-          </div>
+        <div class="h-4 p-3 w-10 text-black font-sans justify-items-center ml-4 mr-4">
+          <input
+            type="text"
+            class="h-8 w-96 pl-10 pr-36 rounded-lg focus:shadow focus:outline-none"
+            placeholder="Search..."
+            v-model="query"
+            @keypress="fetchWeather"
+          />
         </div>
-        <div class="pt-6">
-          <img src="/map.jpg" alt />
+        <div class="pt-8">
+          <div class="h-40 w-100 bg-blue-300">
+          <!-- <p class="bg-black l-800 w-100"></p> -->
+          <!-- <img src="/map.jpg" alt= /> -->
         </div>
+        </div>
+        
         <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
           <div class="bg-gray-200 pt-2 ml-4 w-64">
             <h1
@@ -32,63 +33,65 @@
             <h2 class="text-black-500 text-xs ml-1 font-ubuntu">Weather forecast.</h2>
             <h3 class="text-black-500 text-xs ml-1 font-ubuntu">Today, {{ dateBuilder() }}</h3>
           </div>
-          <div class="text-xs ml-4 flex flex-row pt-4 bg-gray-200">
+          <div class="text-xs ml-2 justify-around flex pt-4 bg-gray-200">
             <div class="bg-white pt-2 rounded-md">
               <h1 class="text-black font-roboto ml-4 p-2">Temperature</h1>
-              <div class="pt-2 h-5 w-6 flex-auto flex space-x-3">
+              <div class="pt-2 h-4 flex-auto flex">
                 <div class="flex-auto flex-items-center">
-                  <h2
-                    class="text-blue-600 text-xl p-2 font-bold"
-                  >{{ Math.round(weather.main.temp_max) }}°c</h2>
+               <div class="flex">   <h2
+                    class="text-blue-600 text-4xl p-2 font-bold"
+                  >{{ Math.round(weather.main.temp_max) }}</h2><h class="text-black font-xs flex">°c</h></div>
                   <p class="text-black p-2 font-normal">Maximum</p>
                 </div>
                 <div class="flex-auto flex-items-center">
-                  <h3
-                    class="text-blue-600 text-xl p-2 font-bold"
-                  >{{ Math.round(weather.main.temp_min) }}°c</h3>
+                  <div class="flex"><h3
+                    class="text-blue-600 text-4xl p-2 font-bold"
+                  >{{ Math.round(weather.main.temp_min) }}</h3><p class="text-black font-xs">°c</p></div>
                   <p class="text-black p-2 font-normal">Minimum</p>
                 </div>
               </div>
             </div>
-            <div class="bg-white text-xs ml-10 pt-2 flex flex-col h-100 rounded-md">
+            <div class="bg-white text-xs ml-2 pt-2 flex flex-col h-100 rounded-md">
               <h1 class="text-black font-roboto p-2 ml-4 mr-4">Additional Parameters</h1>
-              <div class="flex flex-col">
-                <div class="text-blue p-2 text-xs">Wind {{ Math.round(weather.main.wind_deg) }}</div>
+            
+                <div class="flex justify-between p-2">
+                  <p>Wind</p>
+                  <p class="text-blue-300">{{ Math.round(weather.main.wind_deg) }}</p>
+                </div>
+              
                 <div
-                  class="text-blue p-2 text-xs"
-                >Pressure {{ Math.round(weather.main.pressure) }}Pa</div>
+                  class="flex justify-between text-blue p-2 text-xs"
+                ><p>Pressure</p><p class="text-blue-300" >{{ Math.round(weather.main.pressure) }}Pa</p></div>
                 <div
-                  class="text-blue text-xs p-2 flex flex-row"
-                >Precipitation {{ Math.round(weather.main.precipitation) }}</div>
+                  class="text-blue text-xs p-2 flex justify-between"
+                ><p>Precipitation </p><p class="text-blue-300">{{ Math.round(weather.main.precipitation) }}</p></div>
               </div>
             </div>
-          </div>
           <div class="bg-gray-200 pt-4 w-100">
-            <div class="flex flex-row ml-4 rounded-md bg-white">
+            <div class="flex flex-row ml-4 justify-around rounded-md bg-white">
               <div class="text-black p-2">
                 <p class="text-black text-xs font-Roboto ml-2">Tuesday</p>
-                <img src="/sun.png" alt class="h-12" />
-                <p class="text-black font-light text-xs w-24 ml-2">Sunny Interval</p>
+                <img src="/sun.png" alt class="h-12 p-2" />
+                <p class="text-black font-light text-xs w-24 p-2">Sunny Interval</p>
               </div>
               <div class="text-black p-2 ml-4">
                 <p class="text-black text-xs font-Roboto">Wednesday</p>
-                <img src="/cloud.png" alt class="h-12" />
-                <p class="text-black font-light text-xs w-24">Sunny Interval</p>
+                <img src="/cloud.png" alt class="h-12 p-2" />
+                <p class="text-black font-light text-xs p-2 w-24">Sunny Interval</p>
               </div>
               <div class="text-black p-2 ml-6 mr-2">
                 <p class="text-black text-xs font-Roboto">Thursday</p>
-                <img src="/rain.jpg" alt class="h-12" />
-                <p class="text-black font-light text-xs w-24">Heavy Rain.</p>
+                <img src="/rain.jpg" alt class="h-12 p-2" />
+                <p class="text-black font-light text-xs p-2 w-24">Heavy Rain.</p>
               </div>
             </div>
           </div>
-          <div class="bg-gray-200 h-64"></div>
+          <div class="bg-gray-200 h-48"></div>
         </div>
       </main>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "app",

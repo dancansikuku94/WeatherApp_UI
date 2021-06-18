@@ -24,22 +24,40 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-  name: Deploy to Preview Channelon:
-  pull_request:
-    # Optionally configure to run only for specific files. For example:
-    # paths:
-    # - "website/**"
-
-jobs:
-  build_and_preview:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      # Add any build steps here. For example:
-      # - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+      - name: install nodeModules
+        run: npm i
+      - name: build_WeatherApp
+        run: npm run build
+      - name: Firebase deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ 1//03V_ntvckQhywCgYIARAAGAMSNwF-L9IrMGsecdQghyUhymME1A5ArrkRyke-VyR9qej5IPgoIIazxfvCX29-dPU7liWXQKwrmuQ }}"
-          firebaseServiceAccount: "${{ 7ec102f12916e186b0a2ced28af7db7314495cc4 }}"
+          repoToken: "${{ secrets.TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           expires: 30d
           projectId: sasa-doc
+      
+      
+#   name: Deploy to Preview Channel
+
+#   on:
+#     pull_request:
+#     # Optionally configure to run only for specific files. For example:
+#     # paths:
+#     # - "website/**"
+
+#   jobs:
+#   build_and_preview:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       # Add any build steps here. For example:
+#       # - run: npm ci && npm run build
+#       - uses: FirebaseExtended/action-hosting-deploy@v0
+#         with:
+#           repoToken: "${{ secrets.GITHUB_TOKEN }}"
+#           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+#           expires: 30d
+#           projectId: your-Firebase-project-ID
+

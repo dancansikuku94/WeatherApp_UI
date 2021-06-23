@@ -55,13 +55,13 @@
                   <h1 class="text-blue-600 font-bold">
                     {{ Math.round(weather.main.temp_max) }}°c
                   </h1>
-                  <p class="text-black font-normal pt-2">Maximum</p>
+                  <p class="text-black font-normal pt-4">Maximum</p>
                 </div>
                 <div class="flex-auto flex-items-center">
                   <h3 class="text-blue-600 font-bold">
                     {{ Math.round(weather.main.temp_min) }}°c
                   </h3>
-                  <p class="text-black font-normal pt-2">Minimum</p>
+                  <p class="text-black font-normal pt-4">Minimum</p>
                 </div>
               </div>
             </div>

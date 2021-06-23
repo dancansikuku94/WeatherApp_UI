@@ -45,8 +45,8 @@
               Today, {{ dateBuilder() }}
             </h3>
           </div>
-          <div class="flex flex-row bg-gray-200 p-4">
-            <div class="bg-white pt-4 rounded-md p-6">
+          <div class="flex ml-2 bg-gray-200 p-2">
+            <div class="bg-white rounded-md p-2">
               <h1 class="text-black font-roboto justify-items-center ml-5">
                 Temperature
               </h1>
@@ -65,23 +65,32 @@
                 </div>
               </div>
             </div>
-            <div class="ml-4 pt-4 p-3 rounded-md bg-white">
+            <div class="ml-4 h-100 p-3 rounded-md bg-white">
               <h1 class="text-black font-roboto">Additional Parameters</h1>
-              <div class="flex flex-col">
-                <div class="text-blue font-normal">
-                  Wind {{ Math.round(weather.main.wind_deg) }}
+              <div class="flex-col justify-between p-2">
+                <div class="text-blue font-normal flex justify-between p-2">
+                  <p>Wind</p>
+                  <p class="text-blue-500">
+                    {{ Math.round(weather.main.wind_deg) }}
+                  </p>
                 </div>
-                <div class="text-blue font-normal">
-                  pressure {{ Math.round(weather.main.pressure) }}Pa
+                <div class="text-blue font-normal flex justify-between p-2">
+                  <p>pressure</p>
+                  <p class="text-blue-500">
+                    {{ Math.round(weather.main.pressure) }}Pa
+                  </p>
                 </div>
-                <div class="text-blue font-normal">
-                  Precipitation {{ Math.round(weather.main.precipitation) }}
+                <div class="text-blue font-normal flex justify-between p-2">
+                  <p>Precipitation</p>
+                  <p class="text-blue-500">
+                    {{ Math.round(weather.main.precipitation) }}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="bg-gray-200 w-100 pt-2">
-            <div class="flex flex-row bg-white pt-4">
+            <div class="flex flex-row bg-white justify-between pt-4">
               <div>
                 <p class="text-black font-normal p-2">Tuesday</p>
                 <img src="/sun.png" alt="" class="h=12" />

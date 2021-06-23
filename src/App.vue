@@ -39,7 +39,7 @@
               {{ weather.name }}, {{ weather.sys.country }}
             </h1>
             <h2 class="text-black-500 text-xs ml-1 font-ubuntu">
-              Weather forecast for Today
+              Weather forecast.
             </h2>
             <h3 class="text-black-500 text-sm ml-1 font-ubuntu">
               Today, {{ dateBuilder() }}
